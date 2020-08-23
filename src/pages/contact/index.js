@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {
-  Container,
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import Main from '../../layouts/Main';
+import './style.scss';
 
-class MainFooter extends Component {
+class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,11 +13,11 @@ class MainFooter extends Component {
 
   render() {
     return (
-      <footer style={{ borderTop: '1px solid' }}>
-        <Container style={{ padding: '20px', textAlign: 'center' }}>
-          Copyright @ tuankim
+      <Main>
+        <Container>
+          Contact
         </Container>
-      </footer>
+      </Main>
     );
   }
 }
@@ -26,4 +26,4 @@ const mapStateToProps = (state) => ({ });
 
 const mapDispatchToProps = (dispatch) => ({});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainFooter));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Contact));

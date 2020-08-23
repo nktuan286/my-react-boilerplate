@@ -9,6 +9,7 @@ import {
 
 /* Screens */
 import Home from '../pages/home';
+import Contact from '../pages/contact';
 
 // routes
 import PrivateRoute from './privateRoute';
@@ -37,6 +38,7 @@ class Router extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={WaitingComponent(Home)} />
+        <Route exact path="/contact" component={WaitingComponent(Contact)} />
         {/* <Route exact path="/login" component={WaitingComponent(Login)} /> */}
         {/* <PrivateRoute
 					exact

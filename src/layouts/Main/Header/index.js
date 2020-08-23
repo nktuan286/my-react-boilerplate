@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import {
   Container,
   Navbar,
@@ -9,7 +9,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
 } from 'reactstrap';
 import { Drawer } from 'antd';
 import './style.scss';
@@ -34,28 +33,24 @@ class MainHeader extends Component {
     });
   };
 
-  _renderNavItems = () => {
-    const abc = '';
-    return (
-      <>
-        <NavItem>
-          <NavLink href="/components/">Home</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">About</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Skills</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Blog</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Contact</NavLink>
-        </NavItem>
-      </>
-    );
-  }
+  _renderNavItems = () => (
+    <>
+      <NavItem>
+        <NavLink className="nav-link" id="home-route" to="/">Resume</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink className="nav-link" to="/portfolio">Portfolio</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink className="nav-link" to="/blog">Blog</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink className="nav-link" to="/contact">
+          Contact
+        </NavLink>
+      </NavItem>
+    </>
+  )
 
   _renderDrawer = () => {
     const { isOpen } = this.state;
@@ -78,9 +73,9 @@ class MainHeader extends Component {
   render() {
     return (
       <header>
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" className="bg-white">
           <Container>
-            <NavbarBrand href="/">Me</NavbarBrand>
+            <NavbarBrand className="logo" />
             <NavbarToggler onClick={this._onOpenDrawer} />
             <Nav className="mr-auto hide-on-mobile main-menu" navbar>
               { this._renderNavItems() }

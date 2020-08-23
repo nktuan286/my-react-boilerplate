@@ -16,11 +16,11 @@ class Main extends Component {
         <Header>
           Header
         </Header>
-        <main>
+        <main style={{ marginTop: '30px', marginBottom: '30px' }}>
           { this.props.children }
         </main>
         <Footer>
-          Footer
+          {/* Footer */}
         </Footer>
       </>
     );
